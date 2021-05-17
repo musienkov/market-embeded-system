@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en"
+	  th:replace="_layouts/frontend/template :: frontend(~{::menu}, ~{::content})"
+	  xmlns:th="http://www.thymeleaf.org"
+	  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	  xsi:schemaLocation="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<body>
+
+<menu>
+	<div th:insert="~{_layouts/frontend/menu :: menu}">main menu</div>
+</menu>
+
+<content>
+
+	<h1 class="post-title" th:text="'Категорія ' + ${selectedRegion.name}"></h1>
+
+	<div class="region-description">
+		<div class="pull-right region-image">
+		</div>
+	</div>
+
+
+	<div class="row" th:each="product : ${page.content}">
+		<div class="col-sm-3 col-xs-3 product-unit">
+			<img alt=""
+				 class="img-responsive"
+				 th:src="@{'/img/general.png'}" width="90%"/>
+		</div>
+		<div class="col-sm-9 col-xs-9 product-unit">
+			<div class="pull-right price-block">
+				<div class="product-price product-label" th:text="${product.price} + '&nbsp;грн.'"></div>
+				<form id="quantity-form" method="post" th:action="@{/cart}" th:object="${cartItem}">
+					<input name="productId" th:value="${product.productId}" type="hidden">
+					<input name="quantity" type="hidden" value="1">
+
+
+					<div sec:authorize="!hasRole('ROLE_ANONYMOUS')">
+						<div th:if="${product.available}"
+							 th:with="insideCart=${session.cart.containsProductId(product.productId)}">
+							<button  class="btn btn-primary quantity-button" th:if="${!insideCart}" type="button">в кошик
+							</button>
+							<a class="btn btn-warning" th:href="@{/cart}" th:if="${insideCart}">в кошику</a>
+						</div>
+					</div>
+
+					<div th:if="${!product.available}">
+						<button class="btn btn-default" disabled="disabled" type="button">нема на складі</button>
+					</div>
+				</form>
+			</div>
+			<div class="product-item product-label" th:text="${product.distillery} + ' ' + ${product.name}"></div>
+			<div class="product-description" th:text="${product.description}"></div>
+		</div>
+	</div>
+
+	<div th:insert="~{_layouts/pagination :: pagination}">pagination</div>
+
+
+	<script>
+		$('button.quantity-button').click(function () {
+			var $this = $(this);
+			var form = $this.parents('form:first');
+			var url = form.attr('action');
+			var jsonData = JSON.stringify(form.serializeObject());
+			$.ajax({
+				type: "put",
+				url: url,
+				dataType: "json",
+				contentType: "application/json; charset=utf-8",
+				data: jsonData,
+				success: function (data) {
+					var totalItems = data["totalItems"];
+					$this.after('<a href="' + url + '" class="btn btn-warning">в кошику</a>');
+					$this.remove();
+					$('#cart-total-items').empty().html('<span class="badge">' + totalItems + '</span>');
+				},
+				error: function () {
+					alert("Щось пішло не так.\nСпробуйте додати товар ще раз.");
+				}
+			});
+		});
+		$.fn.serializeObject = function() {
+			var o = {};
+			var a = this.serializeArray();
+			$.each(a, function() {
+				if (o[this.name]) {
+					if (!o[this.name].push) {
+						o[this.name] = [o[this.name]];
+					}
+					o[this.name].push(this.value || '');
+				} else {
+					o[this.name] = this.value || '';
+				}
+			});
+			return o;
+		};
+</script>
+
+</content>
+</body>
+</html>

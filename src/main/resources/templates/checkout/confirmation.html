@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en"
+	  th:replace="_layouts/frontend/template :: frontend(~{}, ~{::content})"
+	  xmlns:th="http://www.thymeleaf.org"
+	  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	  xsi:schemaLocation="http://www.thymeleaf.org">
+<body>
+
+<content>
+
+	<h1>Замовлення підтверджено</h1>
+
+	<div class="clearfix">
+		<div>
+			<div class="col-md-7" style="padding-right: 20px;">
+				<p th:if="${createdOrder.deliveryIncluded}">
+				<p>Номер рахунку: <strong th:text="${createdOrder.billNumber}"></strong>.</p>
+				<p>Дякуємо, що вибрали наш магазин!!</p>
+				<br>
+				<p>Переглянути свої замовлення ви можете в
+					<a th:href="@{/customer/orders}">історії замовлень</a>.</p>
+			</div>
+			<div class="col-md-5">
+				<div class="panel panel-default">
+					<div class="panel-heading">Отримувач</div>
+					<div class="panel-body">
+						<span th:text="${userAccount.name}"></span>
+						<br>
+						<span th:if="${createdOrder.deliveryIncluded}">
+						м. Київ<br>
+						<span th:text="${userContacts.address}"></span>
+						<hr/>
+					</span>
+						<span th:text="${userContacts.phone}"></span>
+						<br>
+						<span th:text="${userAccount.email}"></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<br>
+	<center>
+		<a class="btn btn-primary" th:href="@{/}">повернутись в магазин</a>
+	</center>
+
+	<br>
+</content>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en"
+	  th:replace="_layouts/frontend/template :: frontend(~{}, ~{::content})"
+	  xmlns:th="http://www.thymeleaf.org"
+	  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	  xsi:schemaLocation="http://www.thymeleaf.org">
+
+<body>
+<content>
+
+	<h1>Вхід в магазин</h1>
+
+	<br>
+
+	<div class="bs-callout bs-callout-danger" th:if="${'true' eq param.error}">
+		<h4>Такий користувач уже існує.</h4>
+	</div>
+	<div class="bs-callout bs-callout-danger" th:if="${'true' eq param.secured}">
+		<h4>У вас недостатньо прав для доступу..</h4>
+	</div>
+
+	<div style="margin-top:70px; margin-bottom:100px;">
+		<div>
+			<form class="form-horizontal" id="signupForm" method="post" th:action="@{/login}">
+				<div class="form-group">
+					<label class="col-sm-4 control-label" for="email">
+						електронна адреса
+					</label>
+					<div class="col-sm-5">
+						<input class="form-control"
+							   id="email"
+							   maxlength="45"
+							   name="email"
+							   size="31"
+							   type="text">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-4 control-label" for="password">
+						пароль
+					</label>
+					<div class="col-sm-5">
+						<input class="form-control"
+							   id="password"
+							   maxlength="45"
+							   name="password"
+							   size="31"
+							   type="password">
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-offset-4 col-sm-5">
+						<div class="checkbox">
+							<label for="_spring_security_remember_me">
+								<input id="_spring_security_remember_me"
+									   name="_spring_security_remember_me"
+									   type="checkbox"> запам'ятати мене
+							</label>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-offset-4 col-sm-5">
+						<button class="btn btn-success" type="submit">Увійти</button>
+						<a class="btn btn-default" th:href="@{/customer/new}">Реєстрація</a>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</content>
+</body>
+</html>

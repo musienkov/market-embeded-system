@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en"
+	  th:replace="_layouts/frontend/template :: frontend(~{}, ~{::content})"
+	  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+	  xmlns:th="http://www.thymeleaf.org"
+	  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	  xsi:schemaLocation="http://www.thymeleaf.org http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<body>
+
+<content>
+
+<span th:with="cartEmpty=${session.cart.isEmpty()}">
+
+<style th:inline="text">
+	.included-true {
+		display: ${cart.deliveryIncluded ? 'anything' : 'none'};
+	}
+	.included-false {
+		display: ${(! cart.deliveryIncluded) ? 'anything' : 'none'};
+	}
+</style>
+
+<h1 class="post-title">Кошик</h1>
+
+<p th:if="${session.cart.totalItems > 1}">У вашій корзині знаходиться <span
+		th:text="${session.cart.totalItems}">cart.totalItems</span> товарів.</p>
+<p th:if="${session.cart.totalItems == 1}">У вашому кошику знаходиться один товар.</p>
+<p th:if="${cartEmpty}">Ваш кошик порожній.</p>
+
+<br>
+
+<div>
+	<div align="center" class="col-md-4" th:if="${!cartEmpty}">
+		<form method="post" th:action="@{/cart/clear}">
+			<button class="btn btn-default" type="submit">
+				очистити кошик
+			</button>
+		</form>
+	</div>
+	<div align="center" class="col-md-4">
+		<a class="btn btn-primary" th:href="@{/}">
+			продовжити покупки
+		</a>
+	</div>
+	<div align="center" class="col-md-4" th:if="${!cartEmpty}">
+		<div sec:authorize="!hasRole('ROLE_ANONYMOUS')">
+			<a class="btn btn-primary"
+			   id="next-step"
+			   th:href="@{${session.cart.deliveryIncluded} ? '/checkout/details' : '/checkout/payment'}">
+				оформити замовлення
+			</a>
+		</div>
+		<div sec:authorize="hasRole('ROLE_ANONYMOUS')">
+			<a class="btn btn-primary" th:href="@{/login}">
+				увійти для оформлення
+			</a>
+		</div>
+	</div>
+</div>
+
+<br>
+<br>
+<br>
+
+<div th:if="${!cartEmpty}">
+
+	<div class="table">
+		<table class="table" width="100%">
+			<thead>
+			<tr>
+				<th>товар</th>
+				<th>ціна</th>
+				<th align="center">загальна ціна</th>
+			</tr>
+			</thead>
+
+			<tr th:each="cartItem : ${session.cart.cartItems}" th:with="product=${productsById[cartItem.productId]}">
+				<td th:text="${product.distillery} + ' ' + ${product.name}"></td>
+				<td th:text="${product.price} + '&nbsp;грн.'"></td>
+
+				<td th:text="${product.price * cartItem.quantity} + '&nbsp;грн.'"></td>
+			</tr>
+
+			<tr class="included-false">
+				<td align="right" colspan="4"><h4>всього:</h4></td>
+				<td><h4 th:text="${session.cart.productsCost} + '&nbsp;грн.'"></h4></td>
+			</tr>
+		</table>
+	</div>
+
+
+</div>
+
+
+<script>
+    $('body').delegate('input[name=included]:checked', 'change', function () {
+        var $this = $(this);
+        var form = $this.parents('form:first');
+        var valueToSet = $(this).val();
+        $.ajax({
+            type: form.attr('method'),
+            url: form.attr('action') + "/" + valueToSet,
+            success: function (data) {
+                var deliveryIncluded = data["deliveryIncluded"];
+                if (deliveryIncluded) {
+                    $('#next-step').attr('href', 'checkout/details');
+                } else {
+                    $('#next-step').attr('href', 'checkout/payment');
+                }
+                $('.included-true').each(function () {
+                    if (deliveryIncluded) {
+                        $(this).show();
+                    } else {
+                        $(this).hide();
+                    }
+                });
+                $('.included-false').each(function () {
+                    if (deliveryIncluded) {
+                        $(this).hide();
+                    } else {
+                        $(this).show();
+                    }
+                });
+            },
+            error: function () {
+                alert("Что-то пошло не так.\nПопробуйте добавить товар ещё раз.");
+            }
+        });
+    });
+</script>
+
+</span>
+
+</content>
+</body>
+</html>
