@@ -25,9 +25,8 @@ public class FileController {
 
 	@RequestMapping(value = "download-file-{id}", method = RequestMethod.GET)
 	public void downloadFile(@PathVariable("id") long orderId, Principal principal, HttpServletResponse response) throws IOException {
-		System.out.println("ORDER: "+orderId);
 		response.setContentType("text/plain");
-		response.setHeader("Content-disposition", "attachment; filename=sample.txt");
+		response.setHeader("Content-disposition", "attachment; filename=Order.txt");
 		fileService.downloadFile(response.getWriter(), principal.getName(), orderId);
 	}
 
@@ -37,7 +36,6 @@ public class FileController {
 		if (!file.isEmpty() && principal != null) {
 			fileService.uploadFile(file, principal.getName());
 		}
-
 		redirectAttributes.addFlashAttribute("message",
 			"You successfully uploaded " + file.getOriginalFilename() + "!");
 

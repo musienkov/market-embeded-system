@@ -33,6 +33,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.security.Principal;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
@@ -80,7 +81,8 @@ public class CustomerController {
 			return "redirect:" + ROOT;
 
 		UserAccount userAccount = userAccountService.findByEmail(principal.getName());
-		model.addAttribute("customerInfo", userAccount.getCustomerInfo());
+		List<String> lines = Arrays.asList(userAccount.getCustomerInfo().split("\n"));
+		model.addAttribute("customerInfo", lines);
 		List<Order> orders = orderService.getUserOrders(principal.getName());
 		List<OrderDTO> ordersDto = orders.stream()
 			.map(orderDtoAssembler::toModel)

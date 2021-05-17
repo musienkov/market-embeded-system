@@ -11,7 +11,10 @@
 
 	<h1>Додаткова інформація про вас</h1>
 	<hr>
-	<p th:text="${customerInfo}"></p>
+	<div th:each="line,iterStat : ${customerInfo}">
+		<p th:text="${line}"></p>
+	</div>
+
 	<form method="POST" th:action="@{/uploadFile}" enctype="multipart/form-data">
 		<input type="file" name="file"/> <br/><br/>
 		<button type="submit">Завантажити</button>

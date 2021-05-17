@@ -42,7 +42,6 @@ public class FileServiceImpl implements FileService {
 	}
 
 	public void downloadFile() {
-		System.out.println("SERVICE");
 	}
 
 	@Override
@@ -50,11 +49,22 @@ public class FileServiceImpl implements FileService {
 		Optional<Order> order = orderService.getUserOrder(userEmail, orderId);
 		if (order.isPresent()) {
 			Order userOrder = order.get();
+			printWriter.write("Customer: ");
+			printWriter.write(userOrder.getUserAccount().getName() + "\n");
+			printWriter.write("Email: ");
+			printWriter.write(userOrder.getUserAccount().getEmail()+ "\n\n");
 			for (OrderedProduct orderedProduct: userOrder.getOrderedProducts()
 			) {
 				Product product = orderedProduct.getProduct();
-				printWriter.write(product.getName());
-				printWriter.write(product.getPrice().toString());
+				printWriter.write("Product: ");
+				printWriter.write(product.getName() + " \n");
+				printWriter.write("Price: ");
+				printWriter.write(product.getPrice().toString()+ " \n");
+				printWriter.write("Delivery: ");
+				printWriter.write(userOrder.getBill().getOrder().getDeliveryCost()+ " \n\n");
+
+				printWriter.write("Total: ");
+				printWriter.write(userOrder.getBill().getTotalCost() + " \n");
 			}
 		}
 	}
@@ -71,13 +81,14 @@ public class FileServiceImpl implements FileService {
 			if (file.getBytes().length > 0) {
 				StringBuilder customerInfo = new StringBuilder();
 				while (myReader.hasNextLine()) {
-					customerInfo.append(myReader.nextLine() +"\n");
+					customerInfo.append(myReader.nextLine()).append("\n");
 				}
 				myReader.close();
 				UserAccount user = userAccountService.findByEmail(userEmail);
 				user.setCustomerInfo(customerInfo.toString());
+				System.out.println(customerInfo.toString());
 				userAccountDAO.save(user);
-				Files.copy(file.getInputStream(), copyLocation, StandardCopyOption.REPLACE_EXISTING);
+//				Files.copy(file.getInputStream(), copyLocation, StandardCopyOption.REPLACE_EXISTING);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
