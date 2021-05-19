@@ -1,7 +1,7 @@
 package market.service.impl;
 
 import market.dao.ProductDAO;
-import market.domain.Distillery;
+import market.domain.Category;
 import market.domain.Product;
 import market.domain.Region;
 import market.exception.UnknownEntityException;
@@ -45,7 +45,7 @@ public class ProductServiceImpl implements ProductService {
 
 	@Transactional(readOnly = true)
 	@Override
-	public Page<Product> findByDistillery(Distillery distillery, PageRequest request) {
+	public Page<Product> findByDistillery(Category distillery, PageRequest request) {
 		return productDAO.findByDistilleryOrderByName(distillery, request);
 	}
 
@@ -96,7 +96,7 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 	private void saveInternal(Product changed, String distilleryTitle, boolean available) {
-		Distillery distillery = distilleryService.findByTitle(distilleryTitle);
+		Category distillery = distilleryService.findByTitle(distilleryTitle);
 		if (distillery != null) {
 			changed.setDistillery(distillery);
 			changed.setAvailable(available);

@@ -10,11 +10,11 @@ INSERT INTO contacts (phone, address, id, city_region) VALUES ('+1 111 111 11 11
 INSERT INTO contacts (phone, address, id, city_region) VALUES ('+79211234567', 'sdf', 7, '13');
 
 
-INSERT INTO distillery (id, title, region_id, description) VALUES (1, 'Планшет', 1, 'Планшет');
-INSERT INTO distillery (id, title, region_id, description) VALUES (2, 'Ноутбук', 4, 'Ноутбук');
-INSERT INTO distillery (id, title, region_id, description) VALUES (3, 'Монітор', 2, 'Монітор');
-INSERT INTO distillery (id, title, region_id, description) VALUES (4, 'Клавіатура', 5, 'Клавіатура');
-INSERT INTO distillery (id, title, region_id, description) VALUES (5, 'Смартфон', 3, 'Смартфон');
+INSERT INTO categories (id, title, region_id, description) VALUES (1, 'Планшет', 1, 'Планшет');
+INSERT INTO categories (id, title, region_id, description) VALUES (2, 'Ноутбук', 4, 'Ноутбук');
+INSERT INTO categories (id, title, region_id, description) VALUES (3, 'Монітор', 2, 'Монітор');
+INSERT INTO categories (id, title, region_id, description) VALUES (4, 'Клавіатура', 5, 'Клавіатура');
+INSERT INTO categories (id, title, region_id, description) VALUES (5, 'Смартфон', 3, 'Смартфон');
 
 
 INSERT INTO product (id, name, distillery_id, age, alcohol, volume, price, description, available) VALUES (2, 'Samsung Galaxy Tab A 8.0', 1, 0, 54.200000762939453, 700, 7020, 'OLED Display / USB Type-C / Nvidia Pascal Graphics', true);

@@ -1,6 +1,6 @@
 package market.controller.frontend;
 
-import market.domain.Distillery;
+import market.domain.Category;
 import market.domain.Product;
 import market.domain.Region;
 import market.dto.CategoryDTO;
@@ -68,7 +68,7 @@ public class ShowcaseController {
 		if (distilleryId == 0) {
 			pagedProducts = productService.findByRegion(region, request);
 		} else {
-			Distillery distillery = distilleryService.findById(distilleryId);
+			Category distillery = distilleryService.findById(distilleryId);
 			pagedProducts = productService.findByDistillery(distillery, request);
 			model.addAttribute("currentDistilleryTitle", distillery.getTitle());
 		}

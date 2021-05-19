@@ -1,41 +1,41 @@
-2021-05-17 23:32:39,688 INFO  [background-preinit] o.h.v.i.u.Version - HV000001: Hibernate Validator 6.1.7.Final
-2021-05-17 23:32:39,713 INFO  [restartedMain] m.Application - Starting Application using Java 11.0.6 on LAPTOP-85MUSLT6 with PID 9124 (D:\KPI\Course 5\EmbeddedSystems\Project\market-embeded-system\target\classes started by Віталій in D:\KPI\Course 5\EmbeddedSystems\Project\market-embeded-system)
-2021-05-17 23:32:39,715 DEBUG [restartedMain] m.Application - Running with Spring Boot v2.4.3, Spring v5.3.4
-2021-05-17 23:32:39,715 INFO  [restartedMain] m.Application - No active profile set, falling back to default profiles: default
-2021-05-17 23:32:39,752 WARN  [restartedMain] o.s.b.c.c.ConfigDataEnvironment - Property 'spring.profiles' imported from location 'class path resource [application.yml]' is invalid and should be replaced with 'spring.config.activate.on-profile' [origin: class path resource [application.yml] - 23:13]
-2021-05-17 23:32:39,754 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2021-05-17 23:32:39,754 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2021-05-17 23:32:40,702 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-05-17 23:32:40,808 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 99 ms. Found 8 JPA repository interfaces.
-2021-05-17 23:32:41,011 INFO  [restartedMain] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'market.DataConfig' of type [market.DataConfig$$EnhancerBySpringCGLIB$$4d05635f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-05-17 23:32:41,092 INFO  [restartedMain] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@8423a1a' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-05-17 23:32:41,097 INFO  [restartedMain] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2021-05-17 23:32:41,319 INFO  [restartedMain] o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
-2021-05-17 23:32:41,326 INFO  [restartedMain] o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-2021-05-17 23:32:41,327 INFO  [restartedMain] o.a.c.c.StandardService - Starting service [Tomcat]
-2021-05-17 23:32:41,327 INFO  [restartedMain] o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.43]
-2021-05-17 23:32:41,446 INFO  [restartedMain] o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext
-2021-05-17 23:32:41,446 INFO  [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1692 ms
-2021-05-17 23:32:41,482 INFO  [restartedMain] c.z.h.HikariDataSource - HikariPool-1 - Starting...
-2021-05-17 23:32:41,557 INFO  [restartedMain] c.z.h.HikariDataSource - HikariPool-1 - Start completed.
-2021-05-17 23:32:41,605 INFO  [restartedMain] o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:market'
-2021-05-17 23:32:41,666 INFO  [restartedMain] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
-2021-05-17 23:32:41,699 INFO  [restartedMain] o.h.j.i.u.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-05-17 23:32:41,739 INFO  [restartedMain] o.h.Version - HHH000412: Hibernate ORM core version 5.4.28.Final
-2021-05-17 23:32:41,822 INFO  [restartedMain] o.h.a.c.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-05-17 23:32:41,976 INFO  [restartedMain] o.h.d.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2021-05-17 23:32:42,109 WARN  [restartedMain] o.h.b.i.InFlightMetadataCollectorImpl - HHH000069: Duplicate generator name gen
-2021-05-17 23:32:42,110 WARN  [restartedMain] o.h.b.i.InFlightMetadataCollectorImpl - HHH000069: Duplicate generator name gen
-2021-05-17 23:32:42,525 INFO  [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-05-17 23:32:42,533 INFO  [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-05-17 23:32:43,133 WARN  [restartedMain] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-05-17 23:32:43,656 INFO  [restartedMain] o.s.s.w.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@450face5, org.springframework.security.web.context.SecurityContextPersistenceFilter@2229d159, org.springframework.security.web.header.HeaderWriterFilter@1acf7a2b, org.springframework.security.web.authentication.logout.LogoutFilter@a710df3, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@46cccdd0, org.springframework.security.web.session.ConcurrentSessionFilter@2ecb41b6, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@6b5837ef, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@47bf4bb3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@36fae792, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@2984754b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@8cdbb8f, org.springframework.security.web.session.SessionManagementFilter@6cffb4b8, org.springframework.security.web.access.ExceptionTranslationFilter@441cef5c, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@b59b3bc]
-2021-05-17 23:32:43,724 INFO  [restartedMain] o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
-2021-05-17 23:32:43,754 INFO  [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
-2021-05-17 23:32:43,945 INFO  [restartedMain] o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-2021-05-17 23:32:43,962 INFO  [restartedMain] o.s.b.w.e.t.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
-2021-05-17 23:32:44,211 INFO  [restartedMain] m.Application - Started Application in 4.929 seconds (JVM running for 6.783)
-2021-05-17 23:32:49,626 INFO  [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2021-05-17 23:32:49,626 INFO  [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2021-05-17 23:32:49,628 INFO  [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet - Completed initialization in 2 ms
-2021-05-17 23:32:49,854 WARN  [http-nio-8080-exec-1] o.a.c.u.SessionIdGeneratorBase - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [208] milliseconds.
+2021-05-19 19:32:27,431 INFO  [background-preinit] o.h.v.i.u.Version - HV000001: Hibernate Validator 6.1.7.Final
+2021-05-19 19:32:27,472 INFO  [restartedMain] m.Application - Starting Application using Java 11.0.6 on LAPTOP-85MUSLT6 with PID 16276 (D:\KPI\Course 5\EmbeddedSystems\Project\market-embeded-system\target\classes started by Віталій in D:\KPI\Course 5\EmbeddedSystems\Project\market-embeded-system)
+2021-05-19 19:32:27,478 DEBUG [restartedMain] m.Application - Running with Spring Boot v2.4.3, Spring v5.3.4
+2021-05-19 19:32:27,479 INFO  [restartedMain] m.Application - No active profile set, falling back to default profiles: default
+2021-05-19 19:32:27,547 WARN  [restartedMain] o.s.b.c.c.ConfigDataEnvironment - Property 'spring.profiles' imported from location 'class path resource [application.yml]' is invalid and should be replaced with 'spring.config.activate.on-profile' [origin: class path resource [application.yml] - 23:13]
+2021-05-19 19:32:27,550 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-05-19 19:32:27,550 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-05-19 19:32:29,561 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-05-19 19:32:29,775 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 194 ms. Found 8 JPA repository interfaces.
+2021-05-19 19:32:30,247 INFO  [restartedMain] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'market.DataConfig' of type [market.DataConfig$$EnhancerBySpringCGLIB$$422234c6] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-05-19 19:32:30,449 INFO  [restartedMain] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@6c5eced7' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-05-19 19:32:30,465 INFO  [restartedMain] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-05-19 19:32:31,049 INFO  [restartedMain] o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-05-19 19:32:31,073 INFO  [restartedMain] o.a.c.h.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2021-05-19 19:32:31,074 INFO  [restartedMain] o.a.c.c.StandardService - Starting service [Tomcat]
+2021-05-19 19:32:31,074 INFO  [restartedMain] o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-05-19 19:32:31,408 INFO  [restartedMain] o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext
+2021-05-19 19:32:31,408 INFO  [restartedMain] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3857 ms
+2021-05-19 19:32:31,485 INFO  [restartedMain] c.z.h.HikariDataSource - HikariPool-1 - Starting...
+2021-05-19 19:32:31,604 INFO  [restartedMain] c.z.h.HikariDataSource - HikariPool-1 - Start completed.
+2021-05-19 19:32:31,669 INFO  [restartedMain] o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:market'
+2021-05-19 19:32:31,780 INFO  [restartedMain] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2021-05-19 19:32:31,830 INFO  [restartedMain] o.h.j.i.u.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-05-19 19:32:31,958 INFO  [restartedMain] o.h.Version - HHH000412: Hibernate ORM core version 5.4.28.Final
+2021-05-19 19:32:32,084 INFO  [restartedMain] o.h.a.c.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-05-19 19:32:32,327 INFO  [restartedMain] o.h.d.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-05-19 19:32:32,572 WARN  [restartedMain] o.h.b.i.InFlightMetadataCollectorImpl - HHH000069: Duplicate generator name gen
+2021-05-19 19:32:32,573 WARN  [restartedMain] o.h.b.i.InFlightMetadataCollectorImpl - HHH000069: Duplicate generator name gen
+2021-05-19 19:32:33,720 INFO  [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-05-19 19:32:33,734 INFO  [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-05-19 19:32:34,948 WARN  [restartedMain] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-05-19 19:32:35,907 INFO  [restartedMain] o.s.s.w.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@252f17bb, org.springframework.security.web.context.SecurityContextPersistenceFilter@1a71fca8, org.springframework.security.web.header.HeaderWriterFilter@6c02b6b7, org.springframework.security.web.authentication.logout.LogoutFilter@41e5e7ff, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4d0ddf46, org.springframework.security.web.session.ConcurrentSessionFilter@7c28ddb3, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@892e90b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5c7a673b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1e090aef, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@30ac0d35, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4126ce34, org.springframework.security.web.session.SessionManagementFilter@62b81590, org.springframework.security.web.access.ExceptionTranslationFilter@23b3b4c1, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@662ada0f]
+2021-05-19 19:32:36,042 INFO  [restartedMain] o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-19 19:32:36,081 INFO  [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+2021-05-19 19:32:36,571 INFO  [restartedMain] o.a.c.h.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2021-05-19 19:32:36,607 INFO  [restartedMain] o.s.b.w.e.t.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2021-05-19 19:32:37,106 INFO  [restartedMain] m.Application - Started Application in 10.279 seconds (JVM running for 12.455)
+2021-05-19 19:32:45,847 INFO  [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-19 19:32:45,848 INFO  [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-05-19 19:32:45,856 INFO  [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet - Completed initialization in 7 ms
+2021-05-19 19:32:46,474 WARN  [http-nio-8080-exec-1] o.a.c.u.SessionIdGeneratorBase - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [543] milliseconds.

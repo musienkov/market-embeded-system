@@ -1,7 +1,7 @@
 package market.service.impl;
 
 import market.dao.DistilleryDAO;
-import market.domain.Distillery;
+import market.domain.Category;
 import market.domain.Region;
 import market.service.DistilleryService;
 import market.service.RegionService;
@@ -25,46 +25,46 @@ public class DistilleryServiceImpl implements DistilleryService {
 
 	@Transactional(readOnly = true)
 	@Override
-	public List<Distillery> findAll() {
+	public List<Category> findAll() {
 		return distilleryDAO.findAll().stream()
-			.sorted(Comparator.comparing(Distillery::getTitle))
+			.sorted(Comparator.comparing(Category::getTitle))
 			.collect(Collectors.toList());
 	}
 
 	@Transactional(readOnly = true)
 	@Override
-	public List<Distillery> findByRegion(Region region) {
+	public List<Category> findByRegion(Region region) {
 		return distilleryDAO.findByRegionOrderByTitleAsc(region);
 	}
 
 	@Transactional(readOnly = true)
 	@Override
-	public Distillery findById(long distilleryId) {
+	public Category findById(long distilleryId) {
 		return distilleryDAO.findById(distilleryId).orElse(null);
 	}
 
 	@Transactional(readOnly = true)
 	@Override
-	public Distillery findByTitle(String title) {
+	public Category findByTitle(String title) {
 		return distilleryDAO.findByTitle(title);
 	}
 
 	@Transactional
 	@Override
-	public void create(Distillery newDistillery, String regionName) {
+	public void create(Category newDistillery, String regionName) {
 		saveInternal(newDistillery, regionName);
 	}
 
 	@Override
-	public void update(long distilleryId, Distillery changedDistillery, String regionName) {
-		Optional<Distillery> originalDistillery = distilleryDAO.findById(distilleryId);
+	public void update(long distilleryId, Category changedDistillery, String regionName) {
+		Optional<Category> originalDistillery = distilleryDAO.findById(distilleryId);
 		if (originalDistillery.isPresent()) {
 			changedDistillery.setId(originalDistillery.get().getId());
 			saveInternal(changedDistillery, regionName);
 		}
 	}
 
-	private void saveInternal(Distillery distillery, String regionName) {
+	private void saveInternal(Category distillery, String regionName) {
 		Region region = regionService.findByName(regionName);
 		if (region != null) {
 			distillery.setRegion(region);

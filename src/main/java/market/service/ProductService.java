@@ -1,9 +1,8 @@
 package market.service;
 
-import market.domain.Distillery;
+import market.domain.Category;
 import market.domain.Product;
 import market.domain.Region;
-import market.exception.UnknownEntityException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 
@@ -17,7 +16,7 @@ public interface ProductService {
 
 	Page<Product> findAll(PageRequest request);
 
-	Page<Product> findByDistillery(Distillery distillery, PageRequest request);
+	Page<Product> findByDistillery(Category distillery, PageRequest request);
 
 	Page<Product> findByRegion(Region region, PageRequest request);
 

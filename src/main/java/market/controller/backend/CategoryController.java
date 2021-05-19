@@ -1,6 +1,6 @@
 package market.controller.backend;
 
-import market.domain.Distillery;
+import market.domain.Category;
 import market.dto.CategoryDTO;
 import market.dto.RegionDTO;
 import market.dto.assembler.CategoryDtoAssembler;
@@ -55,7 +55,7 @@ public class CategoryController {
 			.map(regionDtoAssembler::toModel)
 			.collect(toList());
 		model.addAttribute("regions", regionsDto);
-		model.addAttribute("distillery", new Distillery());
+		model.addAttribute("distillery", new Category());
 		return DISTILLERIES_NEW;
 	}
 
@@ -66,7 +66,7 @@ public class CategoryController {
 		if (bindingResult.hasErrors())
 			return DISTILLERIES_NEW;
 
-		Distillery newDistillery = distilleryDtoAssembler.toDomain(distilleryDto);
+		Category newDistillery = distilleryDtoAssembler.toDomain(distilleryDto);
 		distilleryService.create(newDistillery, distilleryDto.getRegion());
 		return "redirect:/" + DISTILLERIES_BASE;
 	}
@@ -82,7 +82,7 @@ public class CategoryController {
 			.collect(toList());
 		model.addAttribute("regions", regionsDto);
 
-		Distillery distillery = distilleryService.findById(distilleryId);
+		Category distillery = distilleryService.findById(distilleryId);
 		model.addAttribute("distillery", distilleryDtoAssembler.toModel(distillery));
 
 		return DISTILLERIES_EDIT;
@@ -96,7 +96,7 @@ public class CategoryController {
 		if (bindingResult.hasErrors())
 			return DISTILLERIES_EDIT;
 
-		Distillery changedDistillery = distilleryDtoAssembler.toDomain(distilleryDto);
+		Category changedDistillery = distilleryDtoAssembler.toDomain(distilleryDto);
 		distilleryService.update(distilleryId, changedDistillery, distilleryDto.getRegion());
 		return "redirect:/" + DISTILLERIES_BASE;
 	}

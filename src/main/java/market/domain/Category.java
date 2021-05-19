@@ -15,8 +15,8 @@ import java.io.Serializable;
 import java.util.Objects;
 
 @Entity
-@Table(name = "distillery")
-public class Distillery implements Serializable {
+@Table(name = "categories")
+public class Category implements Serializable {
 
 	private static final long serialVersionUID = -1491932412037172392L;
 
@@ -73,7 +73,7 @@ public class Distillery implements Serializable {
 	public boolean equals(Object o) {
 		if (this == o) return true;
 		if (o == null || getClass() != o.getClass()) return false;
-		Distillery that = (Distillery) o;
+		Category that = (Category) o;
 		return Objects.equals(id, that.id) &&
 			Objects.equals(title, that.title) &&
 			Objects.equals(region, that.region) &&
@@ -94,15 +94,15 @@ public class Distillery implements Serializable {
 		public Builder() {
 		}
 
-		public Builder(Distillery source) {
+		public Builder(Category source) {
 			id = source.id;
 			title = source.title;
 			region = source.region;
 			description = source.description;
 		}
 
-		public Distillery build() {
-			Distillery distillery = new Distillery();
+		public Category build() {
+			Category distillery = new Category();
 			distillery.id = id;
 			distillery.title = title;
 			distillery.region = region;

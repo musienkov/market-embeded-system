@@ -30,7 +30,7 @@ public class Product implements Serializable {
 
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "distillery_id", nullable = false)
-	private Distillery distillery;
+	private Category distillery;
 
 	@Column(name = "name", nullable = false)
 	@NotEmpty
@@ -117,11 +117,11 @@ public class Product implements Serializable {
 		this.age = age;
 	}
 
-	public Distillery getDistillery() {
+	public Category getDistillery() {
 		return distillery;
 	}
 
-	public void setDistillery(Distillery distillery) {
+	public void setDistillery(Category distillery) {
 		this.distillery = distillery;
 	}
 
@@ -156,7 +156,7 @@ public class Product implements Serializable {
 
 	public static class Builder {
 		private Long id;
-		private Distillery distillery;
+		private Category distillery;
 		private String name;
 		private Double price;
 		private String description;
@@ -199,7 +199,7 @@ public class Product implements Serializable {
 			return this;
 		}
 
-		public Builder setDistillery(Distillery distillery) {
+		public Builder setDistillery(Category distillery) {
 			this.distillery = distillery;
 			return this;
 		}

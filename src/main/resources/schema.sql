@@ -42,8 +42,8 @@ CREATE TABLE customer_order (
     delivery_cost integer
 );
 
-DROP TABLE IF EXISTS distillery;
-CREATE TABLE distillery (
+DROP TABLE IF EXISTS categories;
+CREATE TABLE categories (
     id bigint auto_increment NOT NULL,
     title character varying(25),
     region_id bigint,

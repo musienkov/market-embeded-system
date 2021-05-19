@@ -1,6 +1,6 @@
 package market.controller.backend;
 
-import market.domain.Distillery;
+import market.domain.Category;
 import market.domain.Product;
 import market.dto.CategoryDTO;
 import market.dto.ProductDTO;
@@ -69,20 +69,20 @@ public class ProductController {
 		if (distilleryId == 0) {
 			pagedProducts = productService.findAll(request);
 		} else {
-			Distillery distillery = distilleryService.findById(distilleryId);
+			Category distillery = distilleryService.findById(distilleryId);
 			pagedProducts = productService.findByDistillery(distillery, request);
 			model.addAttribute("currentDistilleryTitle", distillery.getTitle());
 		}
 		productBackendSorting.prepareModel(model, pagedProducts.map(productDtoAssembler::toModel));
 
-		List<Distillery> distilleries = distilleryService.findAll();
+		List<Category> distilleries = distilleryService.findAll();
 		List<CategoryDTO> distilleriesDto = distilleries.stream()
 			.map(distilleryDtoAssembler::toModel)
 			.collect(toList());
 		model.addAttribute("distilleries", distilleriesDto);
 
 		Map<String, String> regionByDistillery = distilleries.stream()
-			.collect(toMap(Distillery::getTitle, d -> d.getRegion().getName()));
+			.collect(toMap(Category::getTitle, d -> d.getRegion().getName()));
 		model.addAttribute("regionByDistillery", regionByDistillery);
 
 		return PRODUCTS_BASE;
