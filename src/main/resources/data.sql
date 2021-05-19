@@ -17,16 +17,16 @@ INSERT INTO categories (id, title, region_id, description) VALUES (4, 'Клав�
 INSERT INTO categories (id, title, region_id, description) VALUES (5, 'Смартфон', 3, 'Смартфон');
 
 
-INSERT INTO product (id, name, distillery_id, age, alcohol, volume, price, description, available) VALUES (2, 'Samsung Galaxy Tab A 8.0', 1, 0, 54.200000762939453, 700, 7020, 'OLED Display / USB Type-C / Nvidia Pascal Graphics', true);
-INSERT INTO product (id, name, distillery_id, age, alcohol, volume, price, description, available) VALUES (10, 'Asus vivobook', 2, 10, 45.799999237060547, 750, 4683, 'Опис ноутбука...', true);
-INSERT INTO product (id, name, distillery_id, age, alcohol, volume, price, description, available) VALUES (4, 'DELL D2664E', 3, 12, 43, 700, 4913, 'Опис монітора...', true);
-INSERT INTO product (id, name, distillery_id, age, alcohol, volume, price, description, available) VALUES (3, 'Volcano G360', 4, 12, 40, 700, 5403, 'Опис клавіатури...', true);
-INSERT INTO product (id, name, distillery_id, age, alcohol, volume, price, description, available) VALUES (7, 'Samsung Galaxy S10', 5, 0, 48, 700, 5100, 'Опис смартфона...', true);
-INSERT INTO product (id, name, distillery_id, age, alcohol, volume, price, description, available) VALUES (6, 'Apple iPad 10.2', 1, 16, 43, 750, 6620, 'Опис планшета...', true);
-INSERT INTO product (id, name, distillery_id, age, alcohol, volume, price, description, available) VALUES (5, 'Acer TI 84', 2, 15, 43, 750, 6517, ' Опис ноутбука', true);
-INSERT INTO product (id, name, distillery_id, age, alcohol, volume, price, description, available) VALUES (1, 'Samsung Odyssey G5', 3, 10, 46, 700, 4420, 'Опис монітора...', true);
-INSERT INTO product (id, name, distillery_id, age, alcohol, volume, price, description, available) VALUES (11, 'Logitech I280', 4, 12, 43, 700, 4547, 'Опис клавіатури...', true);
-INSERT INTO product (id, name, distillery_id, age, alcohol, volume, price, description, available) VALUES (9, 'Apple iPhone SE', 5, 18, 46, 700, 14490, 'Опис смартфона', true);
+INSERT INTO product (id, name, distillery_id, age, alcohol, volume, price, description, available) VALUES (2, 'Samsung Galaxy Tab A 8.0', 1, 0, 54.200000762939453, 700, 7020, 'IPS Display / USB Type-C / Nvidia G320', true);
+INSERT INTO product (id, name, distillery_id, age, alcohol, volume, price, description, available) VALUES (10, 'Asus vivobook', 2, 10, 45.799999237060547, 750, 4683, ' 16 GB RAM / OLED Display / Intel Core i5', true);
+INSERT INTO product (id, name, distillery_id, age, alcohol, volume, price, description, available) VALUES (4, 'DELL D2664E', 3, 12, 43, 700, 4913, 'OLED Display / USB Type-C / Nvidia Pascal Graphics', true);
+INSERT INTO product (id, name, distillery_id, age, alcohol, volume, price, description, available) VALUES (3, 'Volcano G360', 4, 12, 40, 700, 5403, 'Cherry MX Red Switches', true);
+INSERT INTO product (id, name, distillery_id, age, alcohol, volume, price, description, available) VALUES (7, 'Samsung Galaxy S10', 5, 0, 48, 700, 5100, '8 GB RAM/ USB Type-C / 12MP Camera', true);
+INSERT INTO product (id, name, distillery_id, age, alcohol, volume, price, description, available) VALUES (6, 'Apple iPad 10.2', 1, 16, 43, 750, 6620, 'OLED Display / 12 GB RAM / Nvidia Pascal Graphics', true);
+INSERT INTO product (id, name, distillery_id, age, alcohol, volume, price, description, available) VALUES (5, 'Acer TI 84', 2, 15, 43, 750, 6517, '512 GB SSD / Intel Core i7/ Nvidia Pascal Graphics', true);
+INSERT INTO product (id, name, distillery_id, age, alcohol, volume, price, description, available) VALUES (1, 'Samsung Odyssey G5', 3, 10, 46, 700, 4420, 'OLED Display / USB Type-C / Nvidia Pascal Graphics', true);
+INSERT INTO product (id, name, distillery_id, age, alcohol, volume, price, description, available) VALUES (11, 'Logitech I280', 4, 12, 43, 700, 4547, 'Cherry MX Blue Switches', true);
+INSERT INTO product (id, name, distillery_id, age, alcohol, volume, price, description, available) VALUES (9, 'Apple iPhone SE', 5, 18, 46, 700, 14490, '8 GB RAM/ USB Type-C / 8MP Camera', true);
 
 INSERT INTO region (id, name, subtitle, color, description) VALUES (3, 'Смартфони', '', 'blue', 'Смартфони');
 INSERT INTO region (id, name, subtitle, color, description) VALUES (4, 'Ноутбуки', '', 'black', 'Ноутбуки');

@@ -86,7 +86,6 @@ public class FileServiceImpl implements FileService {
 				myReader.close();
 				UserAccount user = userAccountService.findByEmail(userEmail);
 				user.setCustomerInfo(customerInfo.toString());
-				System.out.println(customerInfo.toString());
 				userAccountDAO.save(user);
 //				Files.copy(file.getInputStream(), copyLocation, StandardCopyOption.REPLACE_EXISTING);
 			}

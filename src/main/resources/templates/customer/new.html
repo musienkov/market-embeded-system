@@ -179,25 +179,25 @@
         },
         description: {
             name: {
-                pattern: '<div class="alert alert-danger">Специальные символы недопустимы.</div>'
+                pattern: '<div class="alert alert-danger">Спеціальні симмволи недопустимі.</div>'
             },
             email: {
-                conditional: '<div class="alert alert-danger">Длина должна составлять не менее 6 символов.</div>',
-                pattern: '<div class="alert alert-danger">Значение поля должно иметь формат адреса электронной почты.</div>'
+                conditional: '<div class="alert alert-danger">Довжина повинна бути не менше 6 символов.</div>',
+                pattern: '<div class="alert alert-danger">Некоректна електронна адреса.</div>'
             },
             password: {
-                conditional: '<div class="alert alert-danger">Длина должна составлять от 6 до 50 символов.</div>',
-                pattern: '<div class="alert alert-danger">Пароль должен состоять из цифр и латинских букв.</div>'
+                conditional: '<div class="alert alert-danger">Довжина повинна складати від 6 до 50 символів.</div>',
+                pattern: '<div class="alert alert-danger">Пароль повинен складатись із цифр і латинських букв.</div>'
             },
             confirm: {
-                conditional: '<div class="alert alert-danger">Не совпадает с паролем.</div>',
-                pattern: '<div class="alert alert-danger">Пароль должен состоять из цифр и латинских букв.</div>'
+                conditional: '<div class="alert alert-danger">Не співпадає з паролем.</div>',
+                pattern: '<div class="alert alert-danger">Пароль повинен складатись із цифр і латинських букв.</div>'
             },
             phone: {
-                pattern: '<div class="alert alert-danger">Должен состоять из знака +, кода страны, кода региона (1-4 цифр) и номера (6-7 цифр).</div>'
+                pattern: '<div class="alert alert-danger">Повинен містити знак +, код країни, код регіону (1-4 цифри) і номер (6-7 цифр).</div>'
             },
             address: {
-                pattern: '<div class="alert alert-danger">Специальные символы недопустимы.</div>'
+                pattern: '<div class="alert alert-danger">Спеціальні символи недопустимі.</div>'
             }
         }
     });

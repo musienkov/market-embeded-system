@@ -1,4 +1,4 @@
-package market.controller.backend;
+package market.controller.files;
 
 import market.files.FileService;
 import org.springframework.stereotype.Controller;
