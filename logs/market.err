@@ -1,4 +1,5 @@
-2021-05-19 19:52:32,740 WARN  [restartedMain] o.s.b.c.c.ConfigDataEnvironment - Property 'spring.profiles' imported from location 'class path resource [application.yml]' is invalid and should be replaced with 'spring.config.activate.on-profile' [origin: class path resource [application.yml] - 23:13]
-2021-05-19 19:52:37,439 WARN  [restartedMain] o.h.b.i.InFlightMetadataCollectorImpl - HHH000069: Duplicate generator name gen
-2021-05-19 19:52:37,442 WARN  [restartedMain] o.h.b.i.InFlightMetadataCollectorImpl - HHH000069: Duplicate generator name gen
-2021-05-19 19:52:39,638 WARN  [restartedMain] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-05-20 13:24:07,155 WARN  [restartedMain] o.s.b.c.c.ConfigDataEnvironment - Property 'spring.profiles' imported from location 'class path resource [application.yml]' is invalid and should be replaced with 'spring.config.activate.on-profile' [origin: class path resource [application.yml] - 23:13]
+2021-05-20 13:24:09,597 WARN  [restartedMain] o.h.b.i.InFlightMetadataCollectorImpl - HHH000069: Duplicate generator name gen
+2021-05-20 13:24:09,598 WARN  [restartedMain] o.h.b.i.InFlightMetadataCollectorImpl - HHH000069: Duplicate generator name gen
+2021-05-20 13:24:10,532 WARN  [restartedMain] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-05-20 13:24:16,713 WARN  [http-nio-8080-exec-1] o.a.c.u.SessionIdGeneratorBase - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [205] milliseconds.

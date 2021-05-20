@@ -7,8 +7,7 @@ INSERT INTO cart (id, total_items, products_cost, delivery_included) VALUES (4, 
 
 
 INSERT INTO contacts (phone, address, id, city_region) VALUES ('+1 111 111 11 11', 'Міщенка 18', 4, '13');
-INSERT INTO contacts (phone, address, id, city_region) VALUES ('+11111111111', 'Address 45', 7, '13');
-
+INSERT INTO contacts (phone, address, id, city_region) VALUES ('+79211234567', 'sdf', 7, '13');
 
 INSERT INTO categories (id, title, region_id, description) VALUES (1, 'Планшет', 1, 'Планшет');
 INSERT INTO categories (id, title, region_id, description) VALUES (2, 'Ноутбук', 4, 'Ноутбук');
@@ -51,8 +50,6 @@ INSERT INTO storage (id, available) VALUES (10, true);
 INSERT INTO storage (id, available) VALUES (11, true);
 
 INSERT INTO user_account (id, email, customerInfo, password, name, active) VALUES (4, 'user@mail.com', '', '$2a$10$Cmwx2Xr/PVpkibiiDz0s7eaVGZHPUvAu5ivdVC5BJgSYbp3c06FY6', 'Vitalii Musiienko', true);
-INSERT INTO user_account (id, email, customerInfo, password, name, active) VALUES (5, 'user2@mail.com', '', '$2a$10$Cmwx2Xr/PVpkibiiDz0s7eaVGZHPUvAu5ivdVC5BJgSYbp3c06FY6', 'Ivan Ivanov', true);
-INSERT INTO user_account (id, email, customerInfo, password, name, active) VALUES (6, 'user3@mail.com', '', '$2a$10$Cmwx2Xr/PVpkibiiDz0s7eaVGZHPUvAu5ivdVC5BJgSYbp3c06FY6', 'Petro Petrenko', true);
 
 INSERT INTO user_role (user_id, role_id) VALUES (1, 0);
 
